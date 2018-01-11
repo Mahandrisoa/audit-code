@@ -1,0 +1,49 @@
+<div class="text-center m-b">
+    <!-- <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-sm rounded white">
+            <a href data-toggle="tab" data-target="#tab_1">Tablespaces</a>
+        </label>
+        <label class="btn btn-sm white">
+            <a href data-toggle="tab" data-target="#tab_2">Disques</a>
+        </label>
+        <label class="btn btn-sm white">
+            <a href data-toggle="tab" data-target="#tab_1" class="has-value">Tables</a>
+        </label>
+        <label class="btn btn-sm rounded white">
+            <a href data-toggle="tab" data-target="#tab_1" class="has-value">Index</a>
+        </label>
+    </div> -->
+    <ul class="nav nav-sm nav-pills nav-active-grey clearfix">
+        <li class="nav-item">
+            <a class="nav-link active" href data-toggle="tab" data-target="#tab_tbs{{$ctrl.audit.DIVISION}}">
+                tablespaces
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href data-toggle="tab" data-target="#tab_dsk{{$ctrl.audit.DIVISION}}">disques
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href data-toggle="tab" data-target="#tab_tbl{{$ctrl.audit.DIVISION}}">Tables
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href data-toggle="tab" data-target="#tab_idx{{$ctrl.audit.DIVISION}}">Index
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="tab-content">
+    <div class="tab-pane p-v-sm active" id="tab_tbs{{$ctrl.audit.DIVISION}}">
+        <tablespace audit="$ctrl.audit"></tablespace>
+    </div>
+    <div class="tab-pane p-v-sm" id="tab_dsk{{$ctrl.audit.DIVISION}}">
+        <disk audit="$ctrl.audit"></disk>
+    </div>
+    <div class="tab-pane p-v-sm" id="tab_tbl{{$ctrl.audit.DIVISION}}">
+        <table audit="$ctrl.audit"></table>
+    </div>
+    <div class="tab-pane p-v-sm" id="tab_idx{{$ctrl.audit.DIVISION}}">
+        <table-index audit="$ctrl.audit"></table-index>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="app-content box-shadow-z4" role="main">
+    <div class="padding">
+        <h2>Audit du {{ $ctrl.dateAudit}}</h2>
+        <div class="row">            
+            <audit-detail ng-repeat="audit in $ctrl.audits" audit="audit"></audit-detail>
+        </div>
+    </div>
+</div>

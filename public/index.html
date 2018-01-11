@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title ng-bind="pageTitle"></title>
+    <link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/vendor/animate.css/animate.min.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/glyphicons/glyphicons.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/material-design-icons/material-design-icons.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/styles/app.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/styles/font.css" type="text/css" />
+</head>
+
+<body ng-app="app">
+    <div class="app">
+        <audit></audit>
+    </div>
+    <!-- bower requires -->
+    <script src="/vendor/socket.io-client/socket.io.js"></script>
+    <script src="/assets/js/angular/angular1.6.9.js"></script>
+    <script src="/assets/js/angular-route/angular_1_router.js"></script>
+    <script src="/assets/js/jquery/jquery.js"></script>
+    <script src="/assets/js/tether/tether.min.js"></script>
+    <script src="/assets/js/bootstrap/bootstrap.js"></script>
+
+    <script src="/assets/js/polyfills/es6-shim.min.js"></script>
+    <script src="/assets/js/polyfills/shims_for_IE.js"></script>
+    <script src="/assets/js/polyfills/system-polyfills.min.js"></script>
+
+    <!-- call to all components -->
+    <script src="/scripts/app.js"></script>
+    <script src="/components/audit/audit.js"></script>
+    <script src="/components/audit-detail/audit-detail.js"></script>
+    <script src="/components/cache/cache.js"></script>
+    <script src="/components/tab/tab.js"></script>
+    <script src="/components/tablespace/tablespace.js"></script>
+    <script src="/components/disk/disk.js"></script>
+    <script src="/components/table/table.js"></script>
+    <script src="/components/table-index/table-index.js"></script>
+</body>
+
+</html>
