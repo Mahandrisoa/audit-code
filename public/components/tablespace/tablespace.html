@@ -1,21 +1,23 @@
 <div style="height:230px;">
-    <table class="table table-fixed; ">
+    <table class="table table-responsive">
         <thead style="display:block;">
             <tr>
-                <th class="col-md-2 text-ellipsis">T_NAME</th>
-                <th class="text-center">ETAT</th>
+                <th class="text-center col-xs-3">T_NAME</th>
+                <th class="text-center col-xs-9">ETAT</th>
             </tr>
         </thead>
-        <tbody style="height : 160px;display: block;overflow-y:auto;">
-            <tr ng-repeat="tbl in $ctrl.tablespaces" style="height: 20px; display:block;">
-                <td style="width :20%;">{{tbl.NOM_OBJET}}</td>
-                <td style="width :60%;">
-                    <div class="progress progress-xs" style="width: 100%;">
-                        <div class="progress-bar" ng-class="{ 'success': tbl.percentUsed < 50 , 'warn': tbl.percentUsed >= 50 && tbl.percentUsed < 75 , 'danger': tbl.percentUsed >= 75 }" style="width: {{tbl.percentUsed}}%;"></div>
+        <tbody style="height: 160px; display: block;overflow-y:scroll;">
+            <tr ng-repeat="tbl in $ctrl.tablespaces">
+                <td class="col-xs-3">{{tbl.NOM_OBJET}}</td>
+                <td class="col-xs-9">
+                    <div class="progress progress-xs">
+                        <div class="progress-bar" ng-class="{ 'success': tbl.percentUsed < 50 , 'warn': tbl.percentUsed >= 50 && tbl.percentUsed < 75 , 'danger': tbl.percentUsed >= 75 }"
+                            style="width: {{tbl.percentUsed}}%"></div>
                     </div>
                 </td>
-            </tr>                                                                            
+            </tr>
+
         </tbody>
     </table>
-    {{ $ctrl.tablespaces.length }} lignes sélectionnées.
+    <p class="text-right">{{ $ctrl.tablespaces.length }} lignes sélectionnées.</p>
 </div>
