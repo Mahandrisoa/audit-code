@@ -5,6 +5,13 @@ function diskCtrl($scope, $element, $attrs, diskService) {
         diskService.getDisks(ctrl.audit.DIVISION)
             .then(function (response) {
                 ctrl.disks = response.data;
+                ctrl.disks.forEach(d => {
+                    var r3 = parseFloat((d.ESPACE_LIBRE * 100) / d.ESPACE_TOTAL).toFixed(3);
+                    d['percentUsed'] = r3;
+                    /**
+                     * need some verifications 
+                     */
+                });
             }, function (reason) {
                 console.warn('ERROR :' + reason)
             });

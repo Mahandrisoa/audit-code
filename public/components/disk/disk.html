@@ -1,1 +1,19 @@
-disk component!
+<div style="height:230px">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Graphe</th>
+                <th>Espace</th>
+                <th>Libre %</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="disk in $ctrl.disks">
+                <td>{{disk.NOM_DISQUE}}</td>
+                <td></td>
+                <td>{{disk.percentUsed}}</td>
+            </tr>
+        </tbody>
+    </table>
+    {{$ctrl.disks.length}} lignes sélectionnées.
+</div>

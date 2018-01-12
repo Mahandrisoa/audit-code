@@ -1,9 +1,13 @@
 function tablespaceCtrl($scope, $element, $attrs, tablespaceService) {
-    var ctrl = this;    
-    this.$onInit = function () {        
+    var ctrl = this;
+    this.$onInit = function () {
         tablespaceService.getTablespaces(ctrl.audit.DIVISION, 'tablespace')
             .then(function (response) {
-                ctrl.tablespace = response.data;
+                ctrl.tablespaces = response.data;
+                ctrl.tablespaces.forEach(tbl => {
+                    var r3 = parseFloat((tbl.TAILLE_UTILISE * 100) / tbl.TAILLE_OBJET).toFixed(3);
+                    tbl['percentUsed'] = r3;                    
+                });
             });
     }
 }

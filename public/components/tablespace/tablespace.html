@@ -1,37 +1,21 @@
-<div ui-jp="chart" ui-options="{
-    tooltip : {
-        trigger: 'axis'
-    },
-    legend: {
-        data:['2011', '2012']
-    },
-    calculable : true,
-    grid : {
-      x: 60
-    },
-    xAxis : [
-        {
-            type : 'value',
-            boundaryGap : [0, 0.01]
-        }
-    ],
-    yAxis : [
-        {
-            type : 'category',
-            data : ['Brasil','Indonesia','USA','India','China','World(M)']
-        }
-    ],
-    series : [
-        {
-            name:'2011',
-            type:'bar',
-            data:[18203, 23489, 29034, 104970, 131744, 630230]
-        },
-        {
-            name:'2012',
-            type:'bar',
-            data:[19325, 23438, 31000, 121594, 134141, 681807]
-        }
-    ]
-}" style="height:200px">
+<div style="height:230px;">
+    <table class="table table-fixed; ">
+        <thead style="display:block;">
+            <tr>
+                <th class="col-md-2 text-ellipsis">T_NAME</th>
+                <th class="text-center">ETAT</th>
+            </tr>
+        </thead>
+        <tbody style="height : 160px;display: block;overflow-y:auto;">
+            <tr ng-repeat="tbl in $ctrl.tablespaces" style="height: 20px; display:block;">
+                <td style="width :20%;">{{tbl.NOM_OBJET}}</td>
+                <td style="width :60%;">
+                    <div class="progress progress-xs" style="width: 100%;">
+                        <div class="progress-bar" ng-class="{ 'success': tbl.percentUsed < 50 , 'warn': tbl.percentUsed >= 50 && tbl.percentUsed < 75 , 'danger': tbl.percentUsed >= 75 }" style="width: {{tbl.percentUsed}}%;"></div>
+                    </div>
+                </td>
+            </tr>                                                                            
+        </tbody>
+    </table>
+    {{ $ctrl.tablespaces.length }} lignes sélectionnées.
 </div>

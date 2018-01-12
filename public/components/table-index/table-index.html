@@ -1,1 +1,17 @@
-table index component!
+<div style="height:230px">
+    <table class="table">
+        <thead>
+            <th>Nom Index</th>
+            <th>Taille Ko</th>
+            <th>Nb Extent</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="i in $ctrl.indexes">
+                <th>{{i.NOM_OBJET}}</th>
+                <th>{{i.TAILLE_OBJET}}</th>
+                <th>{{i.NB_EXTENT}}</th>
+            </tr>
+        </tbody>
+    </table>
+    {{$ctrl.indexes.length}} lignes sélectionnées.
+</div>

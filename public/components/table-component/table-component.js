@@ -13,8 +13,8 @@ function tableCtrl($scope, $element, $attrs, tableService) {
 }
 
 angular.module('app')
-    .component('table', {
-        templateUrl: '/components/table/table.html',
+    .component('tableComponent', {
+        templateUrl: '/components/table-component/table-component.html',
         controller: tableCtrl,
         bindings: {
             audit: '<'

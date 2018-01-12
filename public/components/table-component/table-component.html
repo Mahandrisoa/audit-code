@@ -1,0 +1,16 @@
+<div style="height:230px">
+    <table class="table">
+        <thead>
+            <th>Nom table</th>
+            <th>Taille Ko</th>
+            <th>Nb Extent</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="t in $ctrl.tables">
+                <th>{{t.NOM_OBJET}}</th>
+                <th>{{t.TAILLE_OBJET}}</th>
+                <th>{{t.NB_EXTENT}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
