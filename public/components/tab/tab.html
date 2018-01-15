@@ -35,15 +35,15 @@
 </div>
 <div class="tab-content">
     <div class="tab-pane p-v-sm active" id="tab_tbs{{$ctrl.audit.DIVISION}}">
-        <tablespace audit="$ctrl.audit"></tablespace>
+        <tablespace audit="$ctrl.audit" date="$ctrl.date"></tablespace>
     </div>
     <div class="tab-pane p-v-sm" id="tab_dsk{{$ctrl.audit.DIVISION}}">
-        <disk audit="$ctrl.audit"></disk>
+        <disk audit="$ctrl.audit" date="$ctrl.date"></disk>
     </div>
     <div class="tab-pane p-v-sm" id="tab_tbl{{$ctrl.audit.DIVISION}}">
-        <table-component audit="$ctrl.audit"></table-component>
+        <table-component audit="$ctrl.audit" date="$ctrl.date"></table-component>
     </div>
     <div class="tab-pane p-v-sm" id="tab_idx{{$ctrl.audit.DIVISION}}">
-        <table-index audit="$ctrl.audit"></table-index>
+        <table-index audit="$ctrl.audit" date="$ctrl.date"></table-index>
     </div>
 </div>

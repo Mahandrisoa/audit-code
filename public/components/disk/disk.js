@@ -1,8 +1,7 @@
 function diskCtrl($scope, $element, $attrs, diskService) {
     var ctrl = this;
     this.$onInit = function () {
-
-        diskService.getDisks(ctrl.audit.DIVISION)
+        diskService.getDisks(ctrl.audit.DIVISION, ctrl.date)
             .then(function (response) {
                 ctrl.disks = response.data;
                 ctrl.disks.forEach(d => {
@@ -16,6 +15,7 @@ function diskCtrl($scope, $element, $attrs, diskService) {
                 console.warn('ERROR :' + reason)
             });
     }
+
 }
 
 angular.module('app')
@@ -24,10 +24,11 @@ angular.module('app')
         controller: diskCtrl,
         bindings: {
             audit: '<',
+            date: '<',
         }
     })
     .service('diskService', function ($http) {
-        this.getDisks = function (division, objType) {
-            return $http.get('/api/disque_details?division=' + division + '&date=05/01/2018');
+        this.getDisks = function (division, date) {
+            return $http.get('/api/disque_details?division=' + division + '&date=' + date);
         }
     });

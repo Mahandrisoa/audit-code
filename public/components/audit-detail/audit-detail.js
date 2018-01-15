@@ -7,6 +7,7 @@ angular.module('app')
         templateUrl: '/components/audit-detail/audit-detail.html',
         controller: auditDetailCtrl,
         bindings: {
-            audit: '<',            
+            audit: '<',   
+            date : '<',         
         }
     });    

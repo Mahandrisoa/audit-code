@@ -1,8 +1,24 @@
 <div class="app-content box-shadow-z4" role="main">
-    <div class="padding">
-        <h2>Audit du {{ $ctrl.dateAudit}}</h2>
-        <div class="row">            
-            <audit-detail ng-repeat="audit in $ctrl.audits" audit="audit"></audit-detail>
+    <div class="row p-a white lt box-shadow">
+        <div class="col-sm-6">
+            <h2 class="m-b-0 _300 container">Audit du {{ $ctrl.dateAudit}}</h2>
         </div>
+        <div class="col-sm-6 text-sm-right pull-right">
+            <div class="m-y-sm">
+                <span class="m-r-sm">Date:</span>
+                <input type="date" ng-model="datePicker" ng-change="$ctrl.handlePickerChange(e);">
+            </div>
+            <div class="m-y-sm">
+                <span class="m-r-sm">Type:</span>
+                <select id="" ng-init="typeModel = 'Tout'" ng-model="typeModel" ng-change="$ctrl.handleTypeChange(this)">
+                    <option value="Tout">Tous</option>
+                    <option value="Agence">Agence</option>
+                    <option value="Usine">Usine</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="padding row">
+        <audit-detail ng-repeat="audit in $ctrl.audits" audit="audit" date="$ctrl.dateAudit"></audit-detail>
     </div>
 </div>

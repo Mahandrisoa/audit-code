@@ -3,7 +3,7 @@ function tableCtrl($scope, $element, $attrs, tableService) {
 
     this.$onInit = function () {
         tableService
-            .getTables(ctrl.audit.DIVISION, 'table')
+            .getTables(ctrl.audit.DIVISION, ctrl.date, 'table')
             .then(function (response) {
                 ctrl.tables = response.data;
             }, function (reason) {
@@ -17,11 +17,12 @@ angular.module('app')
         templateUrl: '/components/table-component/table-component.html',
         controller: tableCtrl,
         bindings: {
-            audit: '<'
+            audit: '<',
+            date: '<',
         },
     })
     .service('tableService', function ($http) {
-        this.getTables = function (division, objType) {
-            return $http.get('/api/objet_details?division=' + division + '&date=05/01/2018&objet=' + objType + '');
+        this.getTables = function (division, date, objType) {
+            return $http.get('/api/objet_details?division=' + division + '&date=' + date + '&objet=' + objType + '');
         };
     });

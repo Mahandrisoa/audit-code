@@ -8,5 +8,6 @@ angular.module('app')
         controller: tabCtrl,
         bindings: {
             audit: '<',
+            date : '<',
         }
     });

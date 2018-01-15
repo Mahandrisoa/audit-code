@@ -1,27 +1,67 @@
-function auditCtrl($scope, $http, $element, $attrs) {
+function auditCtrl($scope, $http, $element, $attrs, auditService) {
     var ctrl = this;
-    var today = new Date();
-    today.setDate(5);
-    var day = today.getDate();
-    if ((today.getDate() - 10) < 0) {
-        day = '0' + day;
-    };
-    var nextFormat = day + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
-    ctrl.dateAudit = nextFormat;
 
     this.$onInit = function () {
-        $http.get('/api/audits?date=' + nextFormat).then(function (response) {
-            ctrl.audits = response.data;
-            ctrl.audits.forEach(element => {
-                var cache = parseFloat(element.CACHE_HIT_RATIO).toFixed(3);
-                element.CACHE_HIT_RATIO = cache;
+        var converted = this.convertDate(new Date().toDateString());
+        ctrl.dateAudit = converted;
+        auditService
+            .getAudits(converted)
+            .then(function (response) {
+                response.data.forEach(element => {
+                    var cache = parseFloat(element.CACHE_HIT_RATIO).toFixed(3);
+                    element.CACHE_HIT_RATIO = cache;
+                });
+                ctrl.audits = response.data;
+                ctrl._temp = response.data; // temp is used for backing up data
+                ctrl._backup = response.data;
+            }, function (reason) {
+                console.log('error :' + reason);
             });
-        });
+    }
+
+    this.handlePickerChange = function () {
+        var converted = this.convertDate($scope.datePicker);
+        auditService
+            .getAudits(converted)
+            .then(function (response) {
+                response.data.forEach(element => {
+                    var cache = parseFloat(element.CACHE_HIT_RATIO).toFixed(3);
+                    element.CACHE_HIT_RATIO = cache;
+                });
+                ctrl.audits = response.data;
+                ctrl._temp = response.data; // temp is used for backing up data
+                ctrl._backup = response.data;
+                ctrl.dateAudit = converted;
+                $scope.typeModel = 'Tout';
+            });
+    }
+
+    this.handleTypeChange = function (e) {
+        console.log($scope.typeModel);
+        if ($scope.typeModel === 'Tout') {
+            ctrl.audits = ctrl._backup;
+        } else {
+            ctrl.audits = ctrl._temp.filter(function (element) {
+                return element.DIVISION_TYPE === $scope.typeModel;
+            });
+        }
+
+    }
+
+    this.convertDate = function (inputFormat) {
+        function pad(s) { return (s < 10) ? '0' + s : s; }
+        var d = new Date(inputFormat);
+        return [pad(d.getDate()), pad(d.getMonth() + 1), d.getFullYear()].join('/');
     }
 }
 
-angular.module('app')        
+angular.module('app')
     .component('audit', {
         templateUrl: '/components/audit/audit.html',
-        controller: auditCtrl,        
+        controller: auditCtrl,
+    })
+    .service('auditService', function ($http) {
+        this.getAudits = function (date) {
+            return $http.get('/api/audits?date=' + date);
+        }
     });
