@@ -1,4 +1,11 @@
 <div style="height:230px;">
+    <div class="m-y-sm">
+        <span class="m-r-sm">Tables:</span>
+        <select id="" ng-init="tableModel = 'mostDeffed'" ng-model="tableModel" ng-change="$ctrl.handleChange(this)">
+            <option value="mostDeffed">Les plus défragmentées</option>
+            <option value="biggest">Les plus grosses</option>
+        </select>
+    </div>
     <table class="table table-responsive">
         <thead style="display:block;">
             <tr>
@@ -7,7 +14,7 @@
                 <th class="col-xs-2 text-center">Nb Extent</th>
             </tr>
         </thead>
-        <tbody style="height: 160px; display: block;overflow-y:scroll;overflow-x:scroll;">
+        <tbody style="height: 160px; width : 300px;display: block;overflow-y:scroll;">
             <tr class="row" ng-repeat="t in $ctrl.tables">
                 <th class="text-ellipsis col-xs-4">{{t.NOM_OBJET}}</th>
                 <th class="col-xs-2 text-center">{{t.TAILLE_OBJET}}</th>

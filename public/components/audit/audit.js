@@ -4,6 +4,7 @@ function auditCtrl($scope, $http, $element, $attrs, auditService) {
     this.$onInit = function () {
         var converted = this.convertDate(new Date().toDateString());
         ctrl.dateAudit = converted;
+        $scope.datePicker = new Date();
         auditService
             .getAudits(converted)
             .then(function (response) {
@@ -37,7 +38,6 @@ function auditCtrl($scope, $http, $element, $attrs, auditService) {
     }
 
     this.handleTypeChange = function (e) {
-        console.log($scope.typeModel);
         if ($scope.typeModel === 'Tout') {
             ctrl.audits = ctrl._backup;
         } else {
@@ -52,6 +52,11 @@ function auditCtrl($scope, $http, $element, $attrs, auditService) {
         function pad(s) { return (s < 10) ? '0' + s : s; }
         var d = new Date(inputFormat);
         return [pad(d.getDate()), pad(d.getMonth() + 1), d.getFullYear()].join('/');
+    }
+
+    this.handleSearch = function(e) {
+        console.log($scope.searchModel);
+        //ctrl.audits.match()
     }
 }
 

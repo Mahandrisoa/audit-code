@@ -8,7 +8,7 @@ function tablespaceCtrl($scope, $element, $attrs, tablespaceService) {
                     var r3 = parseFloat((tbl.TAILLE_UTILISE * 100) / tbl.TAILLE_OBJET).toFixed(3);
                     tbl['percentUsed'] = r3;
                 });
-            });
+            });        
     }
 }
 
