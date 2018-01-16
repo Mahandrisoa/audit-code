@@ -16,8 +16,9 @@ function appCtrl($scope, $http, $attrs) {
         ctrl.selected = false;
     }
 
-    this.setSelected = function (elem) {
+    this.setSelected = function (elem,date ) {
         ctrl.selected = !ctrl.selected;
         ctrl.selectedObj = elem;
+        ctrl.selectedDate = date;        
     }
 }

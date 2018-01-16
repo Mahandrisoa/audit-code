@@ -2,7 +2,7 @@ function auditDetailCtrl($scope, $http, $element, $attrs) {
     var ctrl = this;
 
     this.show = function (e) {
-        this.appCtrl.setSelected(ctrl.audit);
+        this.appCtrl.setSelected(ctrl.audit, ctrl.date);
     }
 }
 angular.module('app')
