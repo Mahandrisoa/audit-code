@@ -45,9 +45,7 @@ function auditCtrl($scope, $http, $element, $attrs, auditService) {
                 return element.DIVISION_TYPE === $scope.typeModel;
             });
         }
-
     }
-
     this.convertDate = function (inputFormat) {
         function pad(s) { return (s < 10) ? '0' + s : s; }
         var d = new Date(inputFormat);

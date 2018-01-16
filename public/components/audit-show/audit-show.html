@@ -1,0 +1,262 @@
+<div class="app-content box-shadow-z4" role="main">
+    <div class="row p-a white lt box-shadow">
+        <div class="col-sm-6">
+            <h2 class="m-b-0 _300 container">
+                <a ng-click="$ctrl.backToAudit(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                        <path d="M15 8.25H5.87l4.19-4.19L9 3 3 9l6 6 1.06-1.06-4.19-4.19H15v-1.5z" />
+                    </svg>
+                </a>
+                Details de l'audit
+            </h2>
+        </div>
+        <div class="col-sm-6 text-sm-right pull-right">
+        </div>
+    </div>
+    <div class="padding row">
+        <div class="col-sm-4 col-md-3">
+            <div class="box" style="height: 200px;">
+                <div class="box-header">
+                    <h4 class="m-a-0 m-b-sm text-md">{{ $ctrl.selectedObj.DIVISION_TYPE }} {{ $ctrl.selectedObj.DIVISION_NAME }}</h4>
+                </div>
+                <div class="box-body">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8 col-md-9">
+            <div class="box" style="height: 500px;">
+                <div class="box-header">
+                    <h4 class="m-a-0 m-b-sm text-md">Details de l'audit</h4>
+                </div>
+                <div class="box-body">
+                    <div class="b-b b-primary nav-active-primary">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="" data-toggle="tab" data-target="#tab4" aria-expanded="true">TABLESPACE</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="" data-toggle="tab" data-target="#tab5" aria-expanded="false">DISQUES</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="" data-toggle="tab" data-target="#tab6">TABLES</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="" data-toggle="tab" data-target="#tab7">INDEX</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content p-a m-b-md">
+                        <div class="tab-pane animated fadeIn text-muted active" id="tab4" aria-expanded="true">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <th>NOM </th>
+                                    <th>TAILLE_UTILISE</th>
+                                    <th>TAILLE_OBJET</th>
+                                    <th style="width : 40%">ETAT </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            AUDIT_DATA
+                                        </td>
+                                        <td>20971520</td>
+                                        <td>15065088</td>
+                                        <td>
+                                            <div class="progress progress-xs" data-toggle="tooltip" data-placement="top" title="7.845%">
+                                                <div class="progress-bar success" ng-class="{ 'success': tbl.percentUsed < 50 , 'warn': tbl.percentUsed >= 50 &amp;&amp; tbl.percentUsed < 75 , 'danger': tbl.percentUsed >= 75 }"
+                                                    style="width: 7.845%"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            AUDIT_DATA
+                                        </td>
+                                        <td>20971520</td>
+                                        <td>15065088</td>
+                                        <td>
+                                            <div class="progress progress-xs" data-toggle="tooltip" data-placement="top" title="7.845%">
+                                                <div class="progress-bar success" ng-class="{ 'success': tbl.percentUsed < 50 , 'warn': tbl.percentUsed >= 50 &amp;&amp; tbl.percentUsed < 75 , 'danger': tbl.percentUsed >= 75 }"
+                                                    style="width: 7.845%"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            AUDIT_DATA
+                                        </td>
+                                        <td>20971520</td>
+                                        <td>15065088</td>
+                                        <td>
+                                            <div class="progress progress-xs" data-toggle="tooltip" data-placement="top" title="7.845%">
+                                                <div class="progress-bar success" ng-class="{ 'success': tbl.percentUsed < 50 , 'warn': tbl.percentUsed >= 50 &amp;&amp; tbl.percentUsed < 75 , 'danger': tbl.percentUsed >= 75 }"
+                                                    style="width: 7.845%"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            AUDIT_DATA
+                                        </td>
+                                        <td>20971520</td>
+                                        <td>15065088</td>
+                                        <td>
+                                            <div class="progress progress-xs" data-toggle="tooltip" data-placement="top" title="7.845%">
+                                                <div class="progress-bar success" ng-class="{ 'success': tbl.percentUsed < 50 , 'warn': tbl.percentUsed >= 50 &amp;&amp; tbl.percentUsed < 75 , 'danger': tbl.percentUsed >= 75 }"
+                                                    style="width: 7.845%"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            AUDIT_DATA
+                                        </td>
+                                        <td>20971520</td>
+                                        <td>15065088</td>
+                                        <td>
+                                            <div class="progress progress-xs" data-toggle="tooltip" data-placement="top" title="7.845%">
+                                                <div class="progress-bar success" ng-class="{ 'success': tbl.percentUsed < 50 , 'warn': tbl.percentUsed >= 50 &amp;&amp; tbl.percentUsed < 75 , 'danger': tbl.percentUsed >= 75 }"
+                                                    style="width: 7.845%"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            AUDIT_DATA
+                                        </td>
+                                        <td>20971520</td>
+                                        <td>15065088</td>
+                                        <td>
+                                            <div class="progress progress-xs" data-toggle="tooltip" data-placement="top" title="7.845%">
+                                                <div class="progress-bar success" ng-class="{ 'success': tbl.percentUsed < 50 , 'warn': tbl.percentUsed >= 50 &amp;&amp; tbl.percentUsed < 75 , 'danger': tbl.percentUsed >= 75 }"
+                                                    style="width: 7.845%"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            TOTAL : 20.5402556
+                        </div>
+                        <div class="tab-pane animated fadeIn text-muted" id="tab5" aria-expanded="false">
+                            Components
+                        </div>
+                        <div class="tab-pane animated fadeIn text-muted" id="tab6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <th>NOM </th>
+                                    <th style="width : 20%">TAILLE </th>
+                                    <th style="width : 20%">EXTENT</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane animated fadeIn text-muted" id="tab7">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <th>NOM </th>
+                                    <th style="width : 20%">TAILLE </th>
+                                    <th style="width : 20%">EXTENT</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GL_TRAN_LINES_2</td>
+                                        <td>521216</td>
+                                        <td>509</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            TOTAL : 20.5402556
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

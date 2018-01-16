@@ -1,13 +1,19 @@
 function auditDetailCtrl($scope, $http, $element, $attrs) {
     var ctrl = this;
-    
+
+    this.show = function (e) {
+        this.appCtrl.setSelected(ctrl.audit);
+    }
 }
 angular.module('app')
     .component('auditDetail', {
         templateUrl: '/components/audit-detail/audit-detail.html',
         controller: auditDetailCtrl,
+        require: {
+            appCtrl: '^app'
+        },
         bindings: {
-            audit: '<',   
-            date : '<',         
+            audit: '<',
+            date: '<',
         }
     });    

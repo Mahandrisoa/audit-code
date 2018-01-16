@@ -1,19 +1,23 @@
 angular.module('app', [
-    'ngComponentRouter'
+    'ngComponentRouter',
 ])
     .config(function ($locationProvider) {
         $locationProvider.html5Mode(true);
     })
-    .value('$routerRootComponent', 'appComponent')
-    .component('appComponent', {
-        template:
-            '<nav>\n' +
-            '  <a ng-link="[\'Audits\']">Audits</a>\n' +
-            '  <a ng-link="[\'Audits\']">Details</a>\n' +
-            '</nav>\n' +
-            '<ng-outlet></ng-outlet>\n',
-        $routeConfig: [
-            { path: '/', name: 'Audits', component: 'audit', useAsDefault: true },
-            { path: '/audit/:audit_id', name: 'AuditsShow', component: 'auditShow' }
-        ]
-    });  
+
+    .value('$routerRootComponent', 'app')
+    .component('app', {
+        templateUrl: '/components/app/app.html',
+        controller: appCtrl,
+    });
+function appCtrl($scope, $http, $attrs) {
+    var ctrl = this;
+    this.$onInit = function () {
+        ctrl.selected = false;
+    }
+
+    this.setSelected = function (elem) {
+        ctrl.selected = !ctrl.selected;
+        ctrl.selectedObj = elem;
+    }
+}
