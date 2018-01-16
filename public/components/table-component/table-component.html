@@ -1,27 +1,25 @@
-<div style="height:230px;">
-    <div class="m-y-sm">
-        <span class="m-r-sm">Tables:</span>
-        <select id="" ng-init="tableModel = 'mostDeffed'" ng-model="tableModel" ng-change="$ctrl.handleChange(this)">
-            <option value="mostDeffed">Les plus défragmentées</option>
-            <option value="biggest">Les plus grosses</option>
-        </select>
-    </div>
-    <table class="table table-responsive">
-        <thead style="display:block;">
-            <tr>
-                <th class="text-ellipsis col-xs-6">Nom table</th>
-                <th class="col-xs-2 text-center">Taille Ko</th>
-                <th class="col-xs-2 text-center">Nb Extent</th>
-            </tr>
-        </thead>
-        <tbody style="height: 160px; width : 300px;display: block;overflow-y:scroll;">
-            <tr class="row" ng-repeat="t in $ctrl.tables">
-                <th class="text-ellipsis col-xs-4">{{t.NOM_OBJET}}</th>
-                <th class="col-xs-2 text-center">{{t.TAILLE_OBJET}}</th>
-                <th class="col-xs-2 text-center">{{t.NB_EXTENT}}</th>
-            </tr>
-            <div class="box-divider"></div>
-        </tbody>
-    </table>
-    <p class="text-right">{{ $ctrl.tables.length }} lignes sélectionnées.</p>
+<div class="m-y-sm">
+    <span class="m-r-sm">Tables:</span>
+    <select id="" ng-init="tableModel = 'mostDeffed'" ng-model="tableModel" ng-change="$ctrl.handleChange(this)">
+        <option value="mostDeffed">Les plus défragmentées</option>
+        <option value="biggest">Les plus grosses</option>
+    </select>
 </div>
+<table class="table table-hover b-t">
+    <thead>
+        <tr class="row">
+            <th class="col-xs-6">Nom table</th>
+            <th class="col-xs-3">Taille Ko</th>
+            <th class="col-xs-3">Nb Extent</th>
+        </tr>
+    </thead>
+    <tbody style="overflow-y:scroll;">
+        <tr class="row" ng-repeat="t in $ctrl.tables">
+            <th class="col-xs-6">{{t.NOM_OBJET}}</th>
+            <th class="col-xs-3">{{t.TAILLE_OBJET}}</th>
+            <th class="col-xs-3">{{t.NB_EXTENT}}</th>
+        </tr>
+        <div class="box-divider"></div>
+    </tbody>
+</table>
+<p class="text-right">{{ $ctrl.tables.length }} lignes sélectionnées.</p>

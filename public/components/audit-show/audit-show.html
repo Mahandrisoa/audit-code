@@ -20,25 +20,25 @@
                     <h3 class="m-a-0 m-b-sm text-md text-center">{{ $ctrl.selectedObj.DIVISION_TYPE }} {{ $ctrl.selectedObj.DIVISION_NAME }}</h3>
                 </div>
                 <div class="box-body">
-                        <div class="list inset">
-                                <div class="list-item">
-                                    <div class="list-left">
-                                        <h5>
-                                            Exploitation
-                                        </h5>
-                                    </div>
-                                    <div class="list-body pull-right">
-                                        <h5>
-                                            {{ $ctrl.selectedObj.DIVISION }}
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
                     <div class="list inset">
                         <div class="list-item">
                             <div class="list-left">
                                 <h5>
-                                    Date du 
+                                    Exploitation
+                                </h5>
+                            </div>
+                            <div class="list-body pull-right">
+                                <h5>
+                                    {{ $ctrl.selectedObj.DIVISION }}
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list inset">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <h5>
+                                    Date du
                                 </h5>
                             </div>
                             <div class="list-body pull-right">
@@ -88,17 +88,25 @@
                         </ul>
                     </div>
                     <div class="tab-content p-a m-b-md">
-                        <div class="tab-pane animated fadeIn text-muted active" id="tab4" aria-expanded="true">                            
-                            <tablespace audit="$ctrl.selectedObj" date="$ctrl.selectedDate"></tablespace>
+                        <div class="tab-pane animated fadeIn text-muted active" id="tab4" aria-expanded="true">
+                            <div style="height:350px;" class="table-responsive">
+                                <tablespace audit="$ctrl.selectedObj" date="$ctrl.selectedDate"></tablespace>
+                            </div>
                         </div>
                         <div class="tab-pane animated fadeIn text-muted" id="tab5" aria-expanded="false">
-                            <disk audit="$ctrl.selectedObj" date="$ctrl.selectedDate"></disk>
+                            <div style="height:350px;" class="table-responsive">
+                                <disk audit="$ctrl.selectedObj" date="$ctrl.selectedDate"></disk>
+                            </div>
                         </div>
                         <div class="tab-pane animated fadeIn text-muted" id="tab6">
-                           <table-component audit="$ctrl.selectedObj" date="$ctrl.selectedDate"></table-component>
+                            <div style="height:350px;" class="table-responsive">
+                                <table-component audit="$ctrl.selectedObj" date="$ctrl.selectedDate"></table-component>
+                            </div>
                         </div>
                         <div class="tab-pane animated fadeIn text-muted" id="tab7">
-                            <table-index audit="$ctrl.selectedObj" date="$ctrl.selectedDate"></table-index>                    
+                            <div style="height:350px;" class="table-responsive">
+                                <table-index audit="$ctrl.selectedObj" date="$ctrl.selectedDate"></table-index>
+                            </div>
                         </div>
                     </div>
                 </div>

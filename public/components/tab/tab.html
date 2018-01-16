@@ -13,7 +13,7 @@
             <a href data-toggle="tab" data-target="#tab_1" class="has-value">Index</a>
         </label>
     </div> -->
-    <ul class="nav nav-sm nav-pills nav-active-grey clearfix">
+    <ul class="nav nav-sm nav-pills nav-active-@grey-300 clearfix">
         <li class="nav-item">
             <a class="nav-link active" href data-toggle="tab" data-target="#tab_tbs{{$ctrl.audit.DIVISION}}">
                 tablespaces
@@ -35,15 +35,23 @@
 </div>
 <div class="tab-content">
     <div class="tab-pane p-v-sm active" id="tab_tbs{{$ctrl.audit.DIVISION}}">
-        <tablespace audit="$ctrl.audit" date="$ctrl.date"></tablespace>
+        <div style="height:230px;" class="table-responsive">
+            <tablespace audit="$ctrl.audit" date="$ctrl.date"></tablespace>
+        </div>
     </div>
     <div class="tab-pane p-v-sm" id="tab_dsk{{$ctrl.audit.DIVISION}}">
-        <disk audit="$ctrl.audit" date="$ctrl.date"></disk>
+        <div style="height:230px;" class="table-responsive">
+            <disk audit="$ctrl.audit" date="$ctrl.date"></disk>
+        </div>
     </div>
     <div class="tab-pane p-v-sm" id="tab_tbl{{$ctrl.audit.DIVISION}}">
-        <table-component audit="$ctrl.audit" date="$ctrl.date"></table-component>
+        <div style="height:230px;" class="table-responsive">
+            <table-component audit="$ctrl.audit" date="$ctrl.date"></table-component>
+        </div>
     </div>
     <div class="tab-pane p-v-sm" id="tab_idx{{$ctrl.audit.DIVISION}}">
-        <table-index audit="$ctrl.audit" date="$ctrl.date"></table-index>
+        <div style="height:230px;" class="table-responsive">
+            <table-index audit="$ctrl.audit" date="$ctrl.date"></table-index>
+        </div>
     </div>
 </div>
